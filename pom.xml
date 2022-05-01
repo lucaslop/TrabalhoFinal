@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.lucas</groupId>
-    <artifactId>kafka-spark-flink-example</artifactId>
+    <artifactId>tf_kafka</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>

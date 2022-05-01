@@ -1,4 +1,4 @@
-package org.lucas.kafka.commons;
+package org.lucas.kafka.env;
 
 public class Commons {
     public final static String KAFKA_TOPIC = System.getenv("KAFKA_TOPIC") != null ?

@@ -10,7 +10,7 @@ import org.apache.kafka.clients.producer.*;
 import org.apache.kafka.common.serialization.StringSerializer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.lucas.kafka.commons.Commons;
+import org.lucas.kafka.env.Commons;
 
 import java.util.Properties;
 import java.util.Random;

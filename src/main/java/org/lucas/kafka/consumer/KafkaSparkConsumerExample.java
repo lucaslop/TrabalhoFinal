@@ -10,7 +10,7 @@ import org.apache.log4j.Logger;
 import org.apache.spark.streaming.kafka010.ConsumerStrategies;
 import org.apache.spark.streaming.kafka010.KafkaUtils;
 import org.apache.spark.streaming.kafka010.LocationStrategies;
-import org.lucas.kafka.commons.Commons;
+import org.lucas.kafka.env.Commons;
 import scala.Tuple2;
 
 import org.apache.spark.SparkConf;

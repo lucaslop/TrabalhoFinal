@@ -41,7 +41,7 @@ services:
       - bridge
 
   kafka-producer:
-    image: kafka-spark-flink-example
+    image: tf_kafka
     depends_on:
       - kafka
     environment:
@@ -54,7 +54,7 @@ services:
       - bridge
 
   kafka-consumer-kafka:
-      image: kafka-spark-flink-example
+      image: tf_kafka
       depends_on:
         - kafka-producer
       environment:
@@ -66,7 +66,7 @@ services:
         - bridge
 
   kafka-consumer-spark:
-        image: kafka-spark-flink-example
+        image: tf_kafka
         depends_on:
           - kafka-producer
         ports:
@@ -80,7 +80,7 @@ services:
           - bridge
 
   kafka-consumer-flink:
-        image: kafka-spark-flink-example
+        image: tf_kafka
         depends_on:
           - kafka-producer
         environment:

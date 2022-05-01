@@ -11,7 +11,7 @@ import org.apache.flink.util.Collector;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.lucas.kafka.commons.Commons;
+import org.lucas.kafka.env.Commons;
 
 import java.util.Properties;
 

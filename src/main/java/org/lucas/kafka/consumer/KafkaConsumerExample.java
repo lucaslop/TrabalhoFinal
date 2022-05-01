@@ -7,7 +7,7 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.lucas.kafka.commons.Commons;
+import org.lucas.kafka.env.Commons;
 
 
 import java.util.Collections;
