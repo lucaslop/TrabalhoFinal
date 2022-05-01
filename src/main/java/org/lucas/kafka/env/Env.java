@@ -1,6 +1,6 @@
 package org.lucas.kafka.env;
 
-public class Commons {
+public class Env {
     public final static String KAFKA_TOPIC = System.getenv("KAFKA_TOPIC") != null ?
             System.getenv("KAFKA_TOPIC") : "example";
     public final static String KAFKA_SERVER = System.getenv("KAFKA_SERVER") != null ?

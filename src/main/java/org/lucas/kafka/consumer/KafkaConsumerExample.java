@@ -7,7 +7,7 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.lucas.kafka.env.Commons;
+import org.lucas.kafka.env.Env;
 
 
 import java.util.Collections;
@@ -40,7 +40,7 @@ public class KafkaConsumerExample {
     private static Consumer<String, String> createConsumer() {
         // Create properties
         final Properties props = new Properties();
-        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, Commons.KAFKA_SERVER);
+        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, Env.KAFKA_SERVER);
         props.put(ConsumerConfig.GROUP_ID_CONFIG, "KafkaConsumerGroup");
         props.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         props.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
@@ -49,7 +49,7 @@ public class KafkaConsumerExample {
         final Consumer<String, String> consumer = new KafkaConsumer(props);
 
         // Subscribe to the topic.
-        consumer.subscribe(Collections.singletonList(Commons.KAFKA_TOPIC));
+        consumer.subscribe(Collections.singletonList(Env.KAFKA_TOPIC));
         return consumer;
     }
 }

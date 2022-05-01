@@ -3,7 +3,7 @@ package org.lucas.kafka.cli;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.lucas.kafka.env.Commons;
+import org.lucas.kafka.env.Env;
 import org.lucas.kafka.consumer.KafkaConsumerExample;
 import org.lucas.kafka.consumer.KafkaFlinkConsumerExample;
 import org.lucas.kafka.consumer.KafkaSparkConsumerExample;
@@ -16,9 +16,9 @@ public class Main {
         String PAPEL = System.getenv("PAPEL") != null ?
                 System.getenv("PAPEL") : "producer";
 
-        logger.info("Kafka Topic: {}", Commons.KAFKA_TOPIC);
-        logger.info("Kafka Server: {}", Commons.KAFKA_SERVER);
-        logger.info("Zookeeper Server: {}", Commons.ZOOKEEPER_SERVER);
+        logger.info("Kafka Topic: {}", Env.KAFKA_TOPIC);
+        logger.info("Kafka Server: {}", Env.KAFKA_SERVER);
+        logger.info("Zookeeper Server: {}", Env.ZOOKEEPER_SERVER);
         logger.info("GOAL: {}", PAPEL);
 
         switch (PAPEL.toLowerCase()) {

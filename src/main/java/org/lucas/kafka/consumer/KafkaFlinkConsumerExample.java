@@ -11,7 +11,7 @@ import org.apache.flink.util.Collector;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.lucas.kafka.env.Commons;
+import org.lucas.kafka.env.Env;
 
 import java.util.Properties;
 
@@ -24,10 +24,10 @@ public class KafkaFlinkConsumerExample {
 
         // Properties
         final Properties props = new Properties();
-        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, Commons.KAFKA_SERVER);
+        props.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, Env.KAFKA_SERVER);
         props.put(ConsumerConfig.GROUP_ID_CONFIG, "FlinkConsumerGroup");
 
-        DataStream<String> messageStream = env.addSource(new FlinkKafkaConsumer010<>(Commons.KAFKA_TOPIC, new SimpleStringSchema(), props));
+        DataStream<String> messageStream = env.addSource(new FlinkKafkaConsumer010<>(Env.KAFKA_TOPIC, new SimpleStringSchema(), props));
 
 
         // Split up the lines in pairs (2-tuples) containing: (word,1)

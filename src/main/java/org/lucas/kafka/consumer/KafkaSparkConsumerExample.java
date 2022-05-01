@@ -10,7 +10,7 @@ import org.apache.log4j.Logger;
 import org.apache.spark.streaming.kafka010.ConsumerStrategies;
 import org.apache.spark.streaming.kafka010.KafkaUtils;
 import org.apache.spark.streaming.kafka010.LocationStrategies;
-import org.lucas.kafka.env.Commons;
+import org.lucas.kafka.env.Env;
 import scala.Tuple2;
 
 import org.apache.spark.SparkConf;
@@ -24,13 +24,13 @@ public class KafkaSparkConsumerExample {
     public static void main(final String... args) {
         // Configure Spark to connect to Kafka running on local machine
         Map<String, Object> kafkaParams = new HashMap<>();
-        kafkaParams.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, Commons.KAFKA_SERVER);
+        kafkaParams.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, Env.KAFKA_SERVER);
         kafkaParams.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         kafkaParams.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         kafkaParams.put(ConsumerConfig.GROUP_ID_CONFIG, "SparkConsumerGroup");
 
         //Configure Spark to listen messages in topic test
-        Collection<String> topics = Arrays.asList(Commons.KAFKA_TOPIC);
+        Collection<String> topics = Arrays.asList(Env.KAFKA_TOPIC);
 
         SparkConf conf = new SparkConf().setMaster("local[2]").setAppName("SparkConsumerApplication");
 
