@@ -24,7 +24,7 @@ public class KafkaProducerExample {
         // Create topic
         createTopic();
 
-        String[] words = new String[]{"one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten"};
+        String[] words = new String[]{"Cachorro", "gato", "Tigre", "Urso", "Leão", "Foca", "Urubu", "Macaco", "Onça", "Gavião"};
         Random ran = new Random(System.currentTimeMillis());
 
         final Producer<String, String> producer = createProducer();
@@ -39,7 +39,7 @@ public class KafkaProducerExample {
                 ProducerRecord<String, String> record = new ProducerRecord<>(Env.KAFKA_TOPIC, uuid, word);
                 RecordMetadata metadata = producer.send(record).get();
 
-                logger.info("Sent ({}, {}) to topic {} @ {}.", uuid, word, Env.KAFKA_TOPIC, metadata.timestamp());
+                logger.info("Enviando ({}, {}) para o {} @ {}.", uuid, word, Env.KAFKA_TOPIC, metadata.timestamp());
 
                 Thread.sleep(PRODUCER_INTERVAL);
             }

@@ -19,7 +19,7 @@ public class Main {
         logger.info("Kafka Topic: {}", Env.KAFKA_TOPIC);
         logger.info("Kafka Server: {}", Env.KAFKA_SERVER);
         logger.info("Zookeeper Server: {}", Env.ZOOKEEPER_SERVER);
-        logger.info("GOAL: {}", PAPEL);
+        logger.info("Papel: {}", PAPEL);
 
         switch (PAPEL.toLowerCase()) {
             case "producer":
@@ -35,7 +35,7 @@ public class Main {
                 KafkaFlinkConsumerExample.main();
                 break;
             default:
-                logger.error("No valid goal to run.");
+                logger.error("Papel inválido");
                 break;
         }
     }
