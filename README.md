@@ -1,3 +1,5 @@
+    mvn clean package
+
 sudo docker build -t tf_kafka .
 
 
